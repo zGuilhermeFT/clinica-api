@@ -1,12 +1,11 @@
-require('dotenv').config()
-require('./database/index');
-const express = require('express')
-const app = express()
-const routes = require('./routes')
-const cors = require('cors')
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import 'materialize-css/dist/css/materialize.min.css';
+import 'materialize-css/';
+import 'material-icons/';
+import 'animate.css';
 
-app.use(cors())
-app.use(express.json())
-app.use(routes)
+console.warn = console.error = () => {};
 
-app.listen(3000)
+ReactDOM.render(<App />, document.getElementById('root'));

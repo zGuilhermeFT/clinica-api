@@ -1,8 +1,19 @@
-const express = require('express')
-const router = express.Router()
-const userController = require('./controllers/userController')
+import React from "react";
 
-router.get('/users', userController.get)
-router.post('/users', userController.store)
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-module.exports = router
+import Home from './views/Home'
+import Joaozinho from './views/Joaozinho'
+import Pedrinho from './views/Pedrinho'
+
+const Routes = () => (
+  <Router>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/joaozinho" component={Joaozinho} />
+      <Route exact path="/pedrinho" component={Pedrinho} />
+    </Switch>
+  </Router>
+);
+
+export default Routes;
